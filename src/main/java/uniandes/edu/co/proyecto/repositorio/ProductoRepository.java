@@ -1,37 +1,27 @@
 package uniandes.edu.co.proyecto.repositorio;
 
-import java.util.Collection;
-import java.util.Date;
+import java.sql.Date;
+import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.mongodb.repository.Update;
 
-import uniandes.edu.co.proyecto.modelo.ProductoEntity;
+import uniandes.edu.co.proyecto.modelo.Categoria;
+import uniandes.edu.co.proyecto.modelo.Producto;
 
-public interface ProductoRepository extends JpaRepository<ProductoEntity, Integer> {
+public interface ProductoRepository extends MongoRepository<Producto,Integer> {
 
-    @Query(value = "SELECT * FROM Producto", nativeQuery = true)
-    Collection<ProductoEntity> darProductos();
+    // Consultar los productos
+    @Query(value = "{}")
+    List<Producto> buscarTodosLosProductos();    
 
-    @Query(value = "SELECT * FROM producto WHERE id_producto = :id_producto", nativeQuery = true)
-    ProductoEntity darProducto(@Param("id_producto") String id_producto);
-
-    @Modifying
-    @Transactional
-    @Query(value = "INSERT INTO producto(id_producto, codigoBarras,nombre, precioUnitarioVenta, presentacion, cantidadPresentacion, unidadMedida, fechaExpiracion, id_especificacionempacado, bodega_id) VALUES(proyecto_sequence.nextval, :codigoBarras, :nombre, :precioUnitarioVenta, :presentacion, :cantidadPresentacion, :unidadMedida, :fechaExpiracion, :id_especificacionempacado, :bodega_id)", nativeQuery = true)
-    void insertarProducto(@Param("codigoBarras") String codigoBarras, @Param("nombre") String nombre, @Param("precioUnitarioVenta") Integer precioUnitarioVenta, @Param("presentacion") String presentacion, @Param("cantidadPresentacion") Integer cantidadPresentacion, @Param("unidadMedida") String unidadMedida, @Param("fechaExpiracion") Date fechaExpiracion, @Param("id_especificacionempacado") Integer id_especificacionempacado, @Param("bodega_id") Integer bodega_id);
-
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE producto SET codigoBarras=:codigoBarras, nombre=:nombre, precioUnitarioVenta=:precioUnitarioVenta, presentacion=:presentacion, cantidadPresentacion=:cantidadPresentacion, unidadMedida=:unidadMedida, fechaExpiracion=:fechaExpiracion, id_especificacionempacado=:id_especificacionempacado, bodega_id=:bodega_id  WHERE id_producto=:id_producto", nativeQuery = true)
-    void actualizarProducto(@Param("id_producto") Integer id_producto, @Param("codigoBarras") String codigoBarras, @Param("nombre") String nombre, @Param("precioUnitarioVenta") Integer precioUnitarioVenta, @Param("presentacion") String presentacion, @Param("cantidadPresentacion") Integer cantidadPresentacion, @Param("unidadMedida") String unidadMedida, @Param("fechaExpiracion") Date fechaExpiracion, @Param("id_especificacionempacado") Integer id_especificacionempacado, @Param("bodega_id") Integer bodega_id);
-
-    @Modifying
-    @Transactional
-    @Query(value = "DELETE FROM producto WHERE id_producto = :id_producto", nativeQuery = true)
-    void eliminarProducto(@Param("id_producto") Integer id_producto);
-
+     // Crear un nuevo producto
+    @Query("{ $insert: { _id: ?0, codigoBarras: ?1, nombre: ?2, precioUnitarioVenta: ?3, presentacion: ?4, cantidadPresentacion: ?5, unidadMedida: ?5,  fechaExpiracion: ?6 , especificacionEmpacadoVolumen: ?7,especificacionEmpacadoPeso: ?8, categoria_producto: ?9 } }")
+    void insertarProducto(int id, String codigoBarras, String nombre, int precioUnitarioVenta, String presentacion, int cantidadPresentacion, String  unidadMedida, Date fechaExpiracion, int especificacionEmpacadoVolumen, int especificacionEmpacadoPeso, List<Categoria> categoria_producto);
+    
+    // Agregar/Crear una categoria
+    @Query("{ _id: ?0 }")
+    @Update("{ $set: { codigoBarras: ?1, nombre: ?2, precioUnitarioVenta: ?3, presentacion: ?4, cantidadPresentacion: ?5, unidadMedida: ?5,  fechaExpiracion: ?6 , especificacionEmpacadoVolumen: ?7,especificacionEmpacadoPeso: ?8, categoria_producto: ?9}}")
+    void agregarCategoria(int id, String codigoBarras, String nombre, int precioUnitarioVenta, String presentacion, int cantidadPresentacion, String  unidadMedida, Date fechaExpiracion, int especificacionEmpacadoVolumen, int especificacionEmpacadoPeso, List<Categoria> categoria_producto);
 }

@@ -1,36 +1,22 @@
 package uniandes.edu.co.proyecto.repositorio;
 
-import java.util.Collection;
+import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-import uniandes.edu.co.proyecto.modelo.CategoriaEntity;
+import uniandes.edu.co.proyecto.modelo.Categoria;
+import uniandes.edu.co.proyecto.modelo.ProductoProveedor;
+import uniandes.edu.co.proyecto.modelo.Proveedor;
 
+public interface CategoriaRepository extends MongoRepository<Categoria,Integer>{
 
-public interface CategoriaRepository extends JpaRepository<CategoriaEntity, Integer>{
+    // Consultar los proveedores
+    @Query(value = "{}")
+    List<Categoria> buscarTodasLasCategorias();    
 
-    @Query(value = "SELECT * FROM Categoria", nativeQuery = true)
-    Collection<CategoriaEntity> darCategorias();
-
-    @Query(value = "SELECT * FROM Categoria WHERE codigo=:codigo", nativeQuery=true)
-    CategoriaEntity darCategoria(@Param("codigo") long codigo);
-
-    @Modifying
-    @Transactional
-    @Query(value = "INSERT INTO Categoria(codigo,nombre,descripcion,caracteristicas) VALUES(proyecto_sequence.nextval, :nombre, :descripcion, :caracteristicas)", nativeQuery = true)
-    void insertarCategoria(@Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicas") String caracteristicas);
-
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE Categoria SET nombre=:nombre, descripcion=:descripcion, caracteristicas=:caracteristicas WHERE codigo=:codigo", nativeQuery = true)
-    void actualizarCategoria(@Param("codigo") long codigo, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicas") String caracteristicas);
-
-    @Modifying
-    @Transactional
-    @Query(value = "DELETE FROM Categoria WHERE codigo=:codigo", nativeQuery = true)
-    void eliminarCategoria(@Param("codigo") long codigo);
+    // Crear un nuevo proveedor
+    @Query("{ $insert: { _id: ?0, NIT: ?1, nombre: ?2, direccion: ?3, nombre_contacto: ?4, telefono_contacto: ?5, productosProveedor: ?5,  ordenesCompra: ?6 } }")
+    void insertarCategoria(int id, String NIT, String nombre, String direccion, String nombre_contacto, String telefono_contacto, List<ProductoProveedor>  productosProveedor, List<Integer> ordenesCompra);
+ 
 }

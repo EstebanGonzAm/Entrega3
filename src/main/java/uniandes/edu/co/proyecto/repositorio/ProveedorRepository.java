@@ -1,42 +1,35 @@
 package uniandes.edu.co.proyecto.repositorio;
 
-import java.util.Collection;
+import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.mongodb.repository.Update;
 
-import uniandes.edu.co.proyecto.modelo.ProveedorEntity;
+import uniandes.edu.co.proyecto.modelo.ProductoProveedor;
+import uniandes.edu.co.proyecto.modelo.Proveedor;
 
-public interface ProveedorRepository extends JpaRepository<ProveedorEntity, String> {
+public interface ProveedorRepository extends MongoRepository<Proveedor,Integer>{
 
-        @Query(value = "SELECT * FROM proveedor", nativeQuery = true)
-        Collection<ProveedorEntity> darProveedores();
+    // Consultar los proveedores
+    @Query(value = "{}")
+    List<Proveedor> buscarTodosLosProveedores();    
 
-        @Query(value = "SELECT * FROM proveedor WHERE NIT = :NIT", nativeQuery = true) // Eliminado el espacio
-        ProveedorEntity darProveedor(@Param("NIT") String NIT); // Cambiado a String si NIT es de tipo String
+    // Consultar proveedor por su ID
+    @Query("{_id: ?0}")
+    List<Proveedor> buscarPorId(int id);
 
-        @Modifying
-        @Transactional
-        @Query(value = "INSERT INTO proveedor(NIT,nombre,direccion,nombre_contacto,telefono) VALUES(proyecto_sequence.nextval, :nombre, :direccion, :nombre_contacto, :telefono)", nativeQuery = true)
-        void insertarProveedor(@Param("nombre") String nombre,
-                        @Param("direccion") String direccion,
-                        @Param("nombre_contacto") String nombre_contacto,
-                        @Param("telefono") String telefono);
+    default void insertarProveedor(Proveedor proveedor){
+        save(proveedor);
 
-        @Modifying
-        @Transactional
-        @Query(value = "UPDATE proveedor SET nombre=:nombre, direccion=:direccion, nombre_contacto=:nombre_contacto, telefono=:telefono WHERE NIT=:NIT", nativeQuery = true)
-        void actualizarProveedor(@Param("NIT") String NIT,
-                        @Param("nombre") String nombre,
-                        @Param("direccion") String direccion,
-                        @Param("nombre_contacto") String nombre_contacto,
-                        @Param("telefono") String telefono);
+    }
 
-        @Modifying
-        @Transactional
-        @Query(value = "DELETE FROM proveedor WHERE NIT = :NIT", nativeQuery = true)
-        void eliminarProveedor(@Param("NIT") String NIT);
+    // Crear un nuevo proveedor
+    @Query("{ $insert: { _id: ?0, NIT: ?1, nombre: ?2, direccion: ?3, nombre_contacto: ?4, telefono_contacto: ?5, productosProveedor: ?5,  ordenesCompra: ?6 } }")
+    void insertarBar(int id, String NIT, String nombre, String direccion, String nombre_contacto, String telefono_contacto, List<ProductoProveedor>  productosProveedor, List<Integer> ordenesCompra);
+
+    // Actualizar un proveedor por su IDs
+    @Query("{ _id: ?0 }")
+    @Update("{ $set: { NIT: ?1, nombre: ?2, direccion: ?3, nombre_contacto: ?4, telefono_contacto: ?5, productosProveedor: ?5,  ordenesCompra: ?6}}")
+    void actualizarProveedor(int id, String NIT, String nombre, String direccion, String nombre_contacto, String telefono_contacto, List<ProductoProveedor>  productosProveedor, List<Integer> ordenesCompra);
 }
