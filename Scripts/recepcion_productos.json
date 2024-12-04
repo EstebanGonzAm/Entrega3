@@ -1,0 +1,53 @@
+[
+{
+  "_id": 26,
+  "bodega_id": 31,
+  "fecha_recepcion": "2024-11-30",
+  "productos": [
+    {
+      "id_producto": 4,
+      "cantidad_recibida": 10,
+      "precio_unitario": 9500
+    },
+    {
+      "id_producto": 5,
+      "cantidad_recibida": 20,
+      "precio_unitario": 8000
+    }
+  ]
+},
+{
+  "_id": 27,
+  "bodega_id": 32,
+  "fecha_recepcion": "2024-11-30",
+  "productos": [
+    {
+      "id_producto": 5,
+      "cantidad_recibida": 10,
+      "precio_unitario": 9500
+    },
+    {
+      "id_producto": 6,
+      "cantidad_recibida": 20,
+      "precio_unitario": 8000
+    }
+  ]
+},
+{
+  "_id": 28,
+  "bodega_id": 33,
+  "fecha_recepcion": "2024-11-30",
+  "productos": [
+    {
+      "id_producto": 7,
+      "cantidad_recibida": 10,
+      "precio_unitario": 9500
+    },
+    {
+      "id_producto": 8,
+      "cantidad_recibida": 20,
+      "precio_unitario": 8000
+    }
+  ]
+}
+]

@@ -1,0 +1,149 @@
+[
+{
+  "_id": 1,
+  "nombre": "Sucursal principal",
+  "direccion": "Calle 45 #12-34",
+  "telefono": "310 234 5678",
+  "ciudad": "Bogotá",
+  "bodegas": [
+    {
+	  "bodega_id": 29,
+      "nombre": "Bodega Principal",
+      "tamanio": 500,
+	  "productos": [
+		{
+			"producto_id": 4,
+			"cantidad": 232,
+			"costo_promedio": 12
+		}
+      ]
+    },
+    {
+	  "bodega_id": 30,
+      "nombre": "Bodega Secundaria",
+      "tamanio": 200,
+	  "productos": [
+		{
+			"producto_id": 5,
+			"cantidad": 132,
+			"costo_promedio": 12
+		}
+      ]
+    }
+	],
+  "nivel_minimo_reorden": [
+    {
+      "producto_id": 4,
+      "nivel_reorden": 150
+    },
+    {
+      "producto_id": 5,
+      "nivel_reorden": 100
+    }
+  ]
+},
+{
+  "_id": 2,
+  "nombre": "Sucursal principal",
+  "direccion": "Calle 45 #12-34",
+  "telefono": "310 234 5678",
+  "ciudad": "Bogotá",
+  "bodegas": [
+    {
+	  "bodega_id": 31,
+      "nombre": "Bodega Terciaria",
+      "tamanio": 500,
+	  "productos": [
+		{
+			"producto_id": 6,
+			"cantidad": 332,
+			"costo_promedio": 22
+		}
+      ]
+    },
+    {
+	  "bodega_id": 32,
+      "nombre": "Bodega Cuaternaria",
+      "tamanio": 200,
+	  "productos": [
+		{
+			"producto_id": 7,
+			"cantidad": 52,
+			"costo_promedio": 12
+		},
+		{
+			"producto_id": 8,
+			"cantidad": 109,
+			"costo_promedio": 22
+		}
+      ]
+    }
+	],
+  "nivel_minimo_reorden": [
+	{
+      "producto_id": 6,
+      "nivel_reorden": 150
+    },
+    {
+      "producto_id": 7,
+      "nivel_reorden": 150
+    },
+    {
+      "producto_id": 8,
+      "nivel_reorden": 100
+    }
+  ]
+},
+{
+  "_id": 3,
+  "nombre": "Sucursal principal",
+  "direccion": "Calle 45 #12-34",
+  "telefono": "310 234 5678",
+  "ciudad": "Bogotá",
+  "bodegas": [
+    {
+	  "bodega_id": 33,
+      "nombre": "Bodega Quinta",
+      "tamanio": 500,
+	  "productos": [
+		{
+			"producto_id": 8,
+			"cantidad": 152,
+			"costo_promedio": 12
+		}
+      ]
+    },
+    {
+	  "bodega_id": 34,
+      "nombre": "Bodega Sexta",
+      "tamanio": 200,
+	  "productos": [
+		{
+			"producto_id": 9,
+			"cantidad": 152,
+			"costo_promedio": 12
+		},
+		{
+			"producto_id": 10,
+			"cantidad": 152,
+			"costo_promedio": 12
+		}
+      ]
+    }
+	],
+  "nivel_minimo_reorden": [
+	{
+      "producto_id": 8,
+      "nivel_reorden": 150
+    },
+    {
+      "producto_id": 9,
+      "nivel_reorden": 150
+    },
+    {
+      "producto_id": 10,
+      "nivel_reorden": 100
+    }
+  ]
+}
+]

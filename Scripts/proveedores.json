@@ -1,0 +1,93 @@
+[
+{
+  "_id": 15,
+  "NIT": "900123456-7",
+  "nombre": "Proveedor 15",
+  "direccion": "Calle 123 #45-67",
+  "nombre_contacto": "María",
+  "telefono_contacto": "310 123 4567",
+  "productos": [
+    {
+      "id_producto": 2,
+      "precio_acordado": 9000
+    },
+    {
+      "id_producto": 3,
+      "precio_acordado": 15000
+    }
+  ],
+  "ordenes_compra": [
+    19
+	
+	]
+},
+{
+  "_id": 16,
+  "NIT": "900123456-7",
+  "nombre": "Proveedor 16",
+  "direccion": "Calle 123 #45-67",
+  "nombre_contacto": "María",
+  "telefono_contacto": "310 123 4567",
+  "productos": [
+    {
+      "id_producto": 2,
+      "precio_acordado": 9000
+    },
+    {
+      "id_producto": 3,
+      "precio_acordado": 15000
+    }
+  ],
+  "ordenes_compra": [
+    20
+	
+	]
+},
+{
+  "_id": 17,
+  "NIT": "900123456-7",
+  "nombre": "Proveedor 17",
+  "direccion": "Calle 123 #45-67",
+  "nombre_contacto": "María",
+  "telefono_contacto": "310 123 4567",
+  "productos": [
+    {
+      "id_producto": 2,
+      "precio_acordado": 9000
+    },
+    {
+      "id_producto": 3,
+      "precio_acordado": 15000
+    }
+  ],
+  "ordenes_compra": [
+    21,
+	25
+	
+	]
+},
+{
+  "_id": 18,
+  "NIT": "900123456-7",
+  "nombre": "Proveedor 18",
+  "direccion": "Calle 123 #45-67",
+  "nombre_contacto": "María",
+  "telefono_contacto": "310 123 4567",
+  "productos": [
+    {
+      "id_producto": 2,
+      "precio_acordado": 9000
+    },
+    {
+      "id_producto": 3,
+      "precio_acordado": 15000
+    }
+  ],
+  "ordenes_compra": [
+    22,
+	23,
+	24
+	
+	]
+}
+]

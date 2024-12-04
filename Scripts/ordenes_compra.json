@@ -1,0 +1,54 @@
+[
+{
+  "_id": 34,
+  "sucursal_id": 1,
+  "proveedor_id": 16,
+  "ETA_orden": "2025-12-31",
+  "estado": "pendiente",
+  "productos": [
+    {
+      "producto_id": 4,
+      "precio_acordado": 9000,
+      "cantidad": 100
+    },
+	{
+      "producto_id": 5,
+      "precio_acordado": 5000,
+      "cantidad": 50
+    }
+  ]
+},
+{
+  "_id": 35,
+  "sucursal_id": 2,
+  "proveedor_id": 17,
+  "ETA_orden": "2025-12-31",
+  "estado": "pendiente",
+  "productos": [
+    {
+      "producto_id": 6,
+      "precio_acordado": 9000,
+      "cantidad": 100
+    },
+	{
+      "producto_id": 7,
+      "precio_acordado": 5000,
+      "cantidad": 50
+    }
+  ]
+},
+{
+  "_id": 36,
+  "sucursal_id": 3,
+  "proveedor_id": 18,
+  "ETA_orden": "2025-12-31",
+  "estado": "pendiente",
+  "productos": [
+    {
+      "producto_id": 8,
+      "precio_acordado": 9000,
+      "cantidad": 100
+    }
+  ]
+}
+]

@@ -1,0 +1,128 @@
+[
+{
+  "_id": 4,
+  "codigo_barras": "codigo barras producto 4",
+  "nombre": "nombre producto 4",
+  "precio_unitario": 9500,
+  "presentacion": "Botella",
+  "cantidad_presentacion": 500,
+  "unidad_medida": "ml",
+  "fecha_expiracion": "2025-12-31",
+  "volumen_empaque": 600,
+  "peso_empaque": 550,
+  "categoria": {
+    "categoria_id": 11,
+    "nombre": "Perecederos",
+    "descripcion": "Productos que requieren...",
+    "caracteristicas_almacenamiento": "En un lugar oscuro"
+  }
+},
+{
+  "_id": 5,
+  "codigo_barras": "codigo barras producto 5",
+  "nombre": "nombre producto 5",
+  "precio_unitario": 9500,
+  "presentacion": "Botella",
+  "cantidad_presentacion": 500,
+  "unidad_medida": "ml",
+  "fecha_expiracion": "2025-12-31",
+  "volumen_empaque": 600,
+  "peso_empaque": 550,
+  "categoria": {
+    "categoria_id": 11,
+    "nombre": "Perecederos",
+    "descripcion": "Productos que requieren...",
+    "caracteristicas_almacenamiento": "refrigeración"
+  }
+},
+{
+  "_id": 6,
+  "codigo_barras": "codigo barras producto 6",
+  "nombre": "nombre producto 6",
+  "precio_unitario": 9500,
+  "presentacion": "Botella",
+  "cantidad_presentacion": 500,
+  "unidad_medida": "ml",
+  "fecha_expiracion": "2025-12-31",
+  "volumen_empaque": 600,
+  "peso_empaque": 550,
+  "categoria": {
+    "categoria_id": 12,
+    "nombre": "Perecederos",
+    "descripcion": "Productos que requieren...",
+    "caracteristicas_almacenamiento": "refrigeración"
+  }
+},
+{
+  "_id": 7,
+  "codigo_barras": "codigo barras producto 7",
+  "nombre": "nombre producto 7",
+  "precio_unitario": 9500,
+  "presentacion": "Botella",
+  "cantidad_presentacion": 500,
+  "unidad_medida": "ml",
+  "fecha_expiracion": "2025-12-31",
+  "volumen_empaque": 600,
+  "peso_empaque": 550,
+  "categoria": {
+    "categoria_id": 13,
+    "nombre": "Perecederos",
+    "descripcion": "Productos que requieren...",
+    "caracteristicas_almacenamiento": "refrigeración"
+  }
+},
+{
+  "_id": 8,
+  "codigo_barras": "codigo barras producto 8",
+  "nombre": "nombre producto 8",
+  "precio_unitario": 9500,
+  "presentacion": "Botella",
+  "cantidad_presentacion": 500,
+  "unidad_medida": "ml",
+  "fecha_expiracion": "2025-12-31",
+  "volumen_empaque": 600,
+  "peso_empaque": 550,
+  "categoria": {
+    "categoria_id": 14,
+    "nombre": "Perecederos",
+    "descripcion": "Productos que requieren...",
+    "caracteristicas_almacenamiento": "refrigeración"
+  }
+},
+{
+  "_id": 9,
+  "codigo_barras": "codigo barras producto 9",
+  "nombre": "nombre producto 9",
+  "precio_unitario": 9500,
+  "presentacion": "Botella",
+  "cantidad_presentacion": 500,
+  "unidad_medida": "ml",
+  "fecha_expiracion": "2025-12-31",
+  "volumen_empaque": 600,
+  "peso_empaque": 550,
+  "categoria": {
+    "categoria_id": 12,
+    "nombre": "Perecederos",
+    "descripcion": "Productos que requieren...",
+    "caracteristicas_almacenamiento": "refrigeración"
+  }
+},
+{
+  "_id": 10,
+  "codigo_barras": "codigo barras producto 10",
+  "nombre": "nombre producto 10",
+  "precio_unitario": 9500,
+  "presentacion": "Botella",
+  "cantidad_presentacion": 500,
+  "unidad_medida": "ml",
+  "fecha_expiracion": "2025-12-31",
+  "volumen_empaque": 600,
+  "peso_empaque": 550,
+  "categoria": {
+    "categoria_id": 14,
+    "nombre": "Perecederos",
+    "descripcion": "Productos que requieren...",
+    "caracteristicas_almacenamiento": "refrigeración"
+  }
+}
+]
